@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head">
+    <link th:href="@{/stylesheets/bootstrap.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js-files/bootstrap.js}"></script>
+</head>
+<body >
+<div th:fragment="page-header" >
+    <div >
+        <div >
+            <a th:href="@{/}"} >The Dungeon</a>
+        </div>
+        <div>
+            <ul >
+<!--               TODO: All entries in this ul should be links to existing pages in the domain (obvi)-->
+                <li>Create Character</li>
+                <li>Search the Dungeon</li>
+                <li>Login/Register</li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
