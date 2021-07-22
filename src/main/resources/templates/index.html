@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container text-light bg-dark">
 
-<div th:replace="fragments :: page-header"></div>
-
-<div  >
-    <div >
-        <h1>Welcome to the Dungeon!</h1>
-        <h2>Are you ready to play?</h2>
-    </div>
+<header th:replace="fragments :: header"></header>
 
 
-</div>
+<!--<div th:replace="fragments :: tinydiv">-->
+<!--    <p>div1 goes here</p>-->
+<!--</div>-->
+
+<!--<div th:replace="fragments :: hugediv">-->
+<!--    <p>div2 goes here</p>-->
+<!--</div>-->
+
+<!--<div th:replace="fragments :: bigdiv">-->
+<!--    <p>div3 goes here</p>-->
+<!--</div>-->
+
+<!--<div th:replace="fragments :: meddiv">-->
+<!--    <p>div3 goes here</p>-->
+<!--</div>-->
 
 </body>
 </html>
