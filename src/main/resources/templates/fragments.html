@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8" />
+    <title>The Dungeon</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<header th:fragment="header">
+   <ul class="nav">
+       <li class="nav-item"><a class="nav-link" href=""> The Dungeon </a></li>
+       <li class="nav-item"><a class="nav-link" href="www.google.com"> Google </a></li>
+       <li class="nav-item"><a class="nav-link" href="www.launchCode.org"> LaunchCode </a></li>
+   </ul>
+
+    <h1 th:text="${title}">Title should get auto-injected from controller using model.addAttribute</h1>
+    <h3 th:text="${subtitle}">Title should get auto-injected from controller using model.addAttribute</h3>
+
+</header>
+
+<div th:fragment="tinydiv">
+    <p>p div frag</p>
+</div>
+
+<div th:fragment="hugediv">
+    <h1>h1 div frag</h1>
+</div>
+
+<div th:fragment="bigdiv">
+    <h2>h2 div frag</h2>
+</div>
+
+<div th:fragment="meddiv">
+    <h3>h3 div frag</h3>
+</div>
+
+
+
+</body>
+</html>
