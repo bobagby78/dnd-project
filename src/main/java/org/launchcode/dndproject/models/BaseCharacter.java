@@ -1,6 +1,14 @@
 package org.launchcode.dndproject.models;
 
+import javax.persistence.GeneratedValue;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
+
 public class BaseCharacter {
+    //@GeneratedValue
+    private Integer id;
+
+    @Size(min=3 , max= 250, message = "Please enter a character name between 3 and 250 characters" )
     private String name;
 
 
