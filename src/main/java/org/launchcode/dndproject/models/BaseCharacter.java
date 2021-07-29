@@ -3,24 +3,30 @@ package org.launchcode.dndproject.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
 
 @Entity
-public class Character extends AbstractEntity{
+public class BaseCharacter {
 
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    @Size(min=3 , max= 250, message = "Please enter a character name between 3 and 250 characters" )
+    private String charName;
     private String charClass;
     private String background;
     private String charRace;
     private String alignment;
     private String xp;
 
-    public Character() {}
+    public BaseCharacter() {}
 
-    public Character(String charClass, String background, String charRace, String alignment, String xp) {
-
+    public BaseCharacter(Integer id, String charName, String charClass, String background, String charRace, String alignment, String xp) {
+        this.id = id;
+        this.charName = charName;
         this.charClass = charClass;
         this.background = background;
         this.charRace = charRace;
@@ -28,7 +34,21 @@ public class Character extends AbstractEntity{
         this.xp = xp;
     }
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCharName() {
+        return charName;
+    }
+
+    public void setCharName(String charName) {
+        this.charName = charName;
+    }
 
     public String getCharClass() {
         return charClass;
@@ -74,13 +94,13 @@ public class Character extends AbstractEntity{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Character that = (Character) o;
-        return  Objects.equals(charClass, that.charClass) && Objects.equals(background, that.background) && Objects.equals(charRace, that.charRace) && Objects.equals(alignment, that.alignment) && Objects.equals(xp, that.xp);
+        BaseCharacter that = (BaseCharacter) o;
+        return Objects.equals(id, that.id) && Objects.equals(charName, that.charName) && Objects.equals(charClass, that.charClass) && Objects.equals(background, that.background) && Objects.equals(charRace, that.charRace) && Objects.equals(alignment, that.alignment) && Objects.equals(xp, that.xp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash( charClass, background, charRace, alignment, xp);
+        return Objects.hash(id, charName, charClass, background, charRace, alignment, xp);
     }
 
 

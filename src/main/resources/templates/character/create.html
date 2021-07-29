@@ -9,7 +9,7 @@
             <div class="col-lg-3">
                 <div class="form-group" value = "Character Name">
                     <label> Character Name
-                        <input type="text" id="charName" name="charName" th:field="${character.name}" class="form-control">
+                        <input type="text" id="charName" name="charName" class="form-control">
                     </label>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class = "col-lg-4">
                             <label> Class
-                                <select id="charClass" name="charClass" th:field="${character.charClass}" class="form-control">
+                                <select id="charClass" name="charClass" class="form-control">
                                     <option> Choose your Class </option>
                                     <option value="barbarian"> Barbarian </option>
                                     <option value="bard"> Bard </option>
@@ -41,7 +41,7 @@
 
                         <div class = "col-lg-4">
                             <label> Background
-                                <input type="text" id="background" name="background" th:field="${character.background}" class="form-control">
+                                <input type="text" id="background" name="background" class="form-control">
                             </label>
                         </div>
 
@@ -56,7 +56,7 @@
 
                         <div class="col-lg-4">
                             <label> Race
-                                <select id="charRace" name="charRace" th:field="${character.charRace}" class="form-control">
+                                <select id="charRace" name="charRace" class="form-control">
                                     <option> Choose your Race </option>
                                     <option value="dwarf"> Dwarf </option>
                                     <option value="elf"> Elf </option>
@@ -72,7 +72,7 @@
 
                         <div class="col-lg-4">
                             <label> Alignment
-                                <select id="alignment" name="alignment" th:field="${character.alignment}" class="form-control">
+                                <select id="alignment" name="alignment" class="form-control">
                                     <option > Choose your Alignment </option>
                                     <option value="neutralGood"> Neutral Good </option>
                                     <option value="chaoticGood"> Chaotic Good </option>
@@ -89,7 +89,7 @@
 
                         <div class="col-lg-4">
                             <label> Exp <!-- starts at zero and builds automatically through BaseCharacter method -->
-                                <input type="text" name="xp" id="xp" th:field="${character.xp}" value="0" class="form-control">
+                                <input type="text" name="xp" id="xp" class="form-control">
                             </label>
                         </div>
                     </div>
