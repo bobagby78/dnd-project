@@ -6,7 +6,7 @@
     <div class>
         <div class="row border">
 
-            <div class="col-lg-3">First Column
+            <div class="col-lg-3">
                 <div class="form-group" value = "Character Name">
                     <label> Character Name
                         <input type="text" id="charName" name="charName" class="form-control">
@@ -14,18 +14,34 @@
                 </div>
             </div>
 
-            <div class="col-lg-9">Second Column
+            <div class="col-lg-9">
                 <div class="form-group">
                     <div class="row">
                         <div class = "col-lg-4">
                             <label> Class
-                                <input type="text" id="charClass" name="charClass" class="form-control">
+                                <select id="charClass" name="charClass" class="form-control">
+                                    <option> Choose your Class </option>
+                                    <option value="barbarian"> Barbarian </option>
+                                    <option value="bard"> Bard </option>
+                                    <option value="cleric"> Cleric </option>
+                                    <option value="druid"> Druid </option>
+                                    <option value="fighter"> Fighter </option>
+                                    <option value="monk"> Monk </option>
+                                    <option value="paladin"> Paladin </option>
+                                    <option value="ranger"> Ranger </option>
+                                    <option value="rogue"> Rogue</option>
+                                    <option value="sorcerer"> Sorcerer </option>
+                                    <option value="warlock"> Warlock </option>
+                                    <option value="wizard"> Wizard </option>
+                                </select>
                             </label>
+
+
                         </div>
 
                         <div class = "col-lg-4">
                             <label> Background
-                                <input type="text" id="charBG" name="charBG" class="form-control">
+                                <input type="text" id="background" name="background" class="form-control">
                             </label>
                         </div>
 
@@ -41,32 +57,39 @@
                         <div class="col-lg-4">
                             <label> Race
                                 <select id="charRace" name="charRace" class="form-control">
-                                    <option value="barbarian"> Barbarian </option>
-                                    <option value="bard"> Bard </option>
-                                    <option value="cleric"> Cleric </option>
-                                    <option value="druid"> Druid </option>
-                                    <option value="fighter"> Fighter </option>
-                                    <option value="monk"> Monk </option>
-                                    <option value="paladin"> Paladin </option>
-                                    <option value="ranger"> Ranger </option>
-                                    <option value="rogue"> Rogue</option>
-                                    <option value="sorcerer"> Sorcerer </option>
-                                    <option value="warlock"> Warlock </option>
-                                    <option value="wizard"> Wizard </option>
+                                    <option> Choose your Race </option>
+                                    <option value="dwarf"> Dwarf </option>
+                                    <option value="elf"> Elf </option>
+                                    <option value="halfling"> Halfling </option>
+                                    <option value="human"> Human </option>
+                                    <option value="gnome"> Gnome </option>
+                                    <option value="half-orc"> Half-Orc </option>
+                                    <option value="dragonborn"> Dragonborn </option>
+                                    <option value="tiefling"> Tiefling </option>
                                 </select>
                             </label>
                         </div>
 
                         <div class="col-lg-4">
                             <label> Alignment
-                                <input type="text" id="charAlignment"  class="form-control">
+                                <select id="alignment" name="alignment" class="form-control">
+                                    <option > Choose your Alignment </option>
+                                    <option value="neutralGood"> Neutral Good </option>
+                                    <option value="chaoticGood"> Chaotic Good </option>
+                                    <option value="lawfulNeutral"> Lawful Neutral </option>
+                                    <option value="trueNeutral"> True Neutral </option>
+                                    <option value="chaoticNeutral"> Chaotic Neutral </option>
+                                    <option value="lawfulEvil"> Lawful Evil </option>
+                                    <option value="neutralEvil"> Neutral Evil </option>
+                                    <option value="chaoticEvil"> Chaotic Evil</option>
+                                </select>
                             </label>
                         </div>
 
 
                         <div class="col-lg-4">
                             <label> Exp <!-- starts at zero and builds automatically through BaseCharacter method -->
-                                <input type="text" class="form-control">
+                                <input type="text" name="xp" id="xp" class="form-control">
                             </label>
                         </div>
                     </div>
@@ -227,7 +250,11 @@
     </div>
     </div>
 
-
 </form>
+
+<div>
+    <input class="btn btn-success text-center" type="submit" value="Create Character">
+</div>
+
 </body>
 </html>
