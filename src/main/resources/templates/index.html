@@ -3,12 +3,59 @@
 <head th:replace="fragments :: head"></head>
 <body class="container text-light bg-dark homeBG">
 <div class="bg-image"
-    style="background-image: url(/images/dnd-map.jpg)
+    style="background-image: url(/images/dnd-map.jpg);
     height: 100vh">
-<header th:replace="fragments :: header"></header>
+    <header th:replace="fragments :: header"></header>
+
+    <div>
+<!--    <div class = "container p-5">-->
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class='p-3'><h2>Venture Forth</h2></div>
+                <div class="row"></div>
+                <div class="col">
+
+                    <div class="row">
+                        <div>
+                            <div class='p-3 '><a href="/">Dungeon Main Page</a></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <div class='p-3 '><a href="/character">View Characters</a></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <div class='p-3 '><a href="/character/create">Character Builder</a></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <div class='p-3 '> </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row text-center">
+                    <h1 th:text="${title}">Title should get auto-injected from controller using model.addAttribute</h1>
+                    <h3 th:text="${subtitle}">Title should get auto-injected from controller using model.addAttribute</h3>
+                </div>
+            </div>
 
 
+        </div>
+
+    </div>
 
 </div>
+
+
 </body>
 </html>

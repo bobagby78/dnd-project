@@ -1,32 +1,233 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8" />
-    <title></title>
-</head>
-<body class="container">
-<p>Create Character form will show up here</p>
-<header> Figure out how to get thymeleaf to drop a header in here from the fragment</header>
+<head th:replace="fragments :: head"></head>
+<body class="container bg-dark text-light">
+<form class="text-center d-flex justify-content-center">
+    <div class>
+        <div class="row border">
 
-<form method="post"></form>
-<div>
-    <label>Character Name
-        <input type="text">
-<!--        <p class="error" th:errors=${character.name} link to validation error messages-->
-    </label>
-</div>
-<div>
-    <label> Race
-        <input type="text">
-<!--        <p class="error" th:errors=${character.name} link to validation error messages-->
-    </label>
-</div>
-<div>
-    <label> Class
-        <input type="text">
-<!--        <p class="error" th:errors=${character.name} link to validation error messages-->
-    </label>
-</div>
+            <div class="col-lg-3">First Column
+                <div class="form-group" value = "Character Name">
+                    <label> Character Name
+                        <input type="text" id="charName" name="charName" class="form-control">
+                    </label>
+                </div>
+            </div>
 
+            <div class="col-lg-9">Second Column
+                <div class="form-group">
+                    <div class="row">
+                        <div class = "col-lg-4">
+                            <label> Class
+                                <input type="text" id="charClass" name="charClass" class="form-control">
+                            </label>
+                        </div>
+
+                        <div class = "col-lg-4">
+                            <label> Background
+                                <input type="text" id="charBG" name="charBG" class="form-control">
+                            </label>
+                        </div>
+
+                        <div class = "col-lg-4">
+                            <label> Player name <!-- link to account name -->
+                                <input type="text" class="form-control">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-4">
+                            <label> Race
+                                <select id="charRace" name="charRace" class="form-control">
+                                    <option value="barbarian"> Barbarian </option>
+                                    <option value="bard"> Bard </option>
+                                    <option value="cleric"> Cleric </option>
+                                    <option value="druid"> Druid </option>
+                                    <option value="fighter"> Fighter </option>
+                                    <option value="monk"> Monk </option>
+                                    <option value="paladin"> Paladin </option>
+                                    <option value="ranger"> Ranger </option>
+                                    <option value="rogue"> Rogue</option>
+                                    <option value="sorcerer"> Sorcerer </option>
+                                    <option value="warlock"> Warlock </option>
+                                    <option value="wizard"> Wizard </option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <label> Alignment
+                                <input type="text" id="charAlignment"  class="form-control">
+                            </label>
+                        </div>
+
+
+                        <div class="col-lg-4">
+                            <label> Exp <!-- starts at zero and builds automatically through BaseCharacter method -->
+                                <input type="text" class="form-control">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row"><div class="col"><br></div></div>
+
+        <div class="row ">
+            <div class="col-lg-2 border "> Main Col1 Dice Roller
+                <div class="row">
+                    <div class="col border">
+                        <div class="row border p-5 " >Click to set Strength
+                            <input  type ="number"></div>
+                        <div class="row border p-5 ">Dexterity<input  type ="number"></div>
+                        <div class="row border p-5 ">Constitution<input  type ="number"></div>
+                        <div class="row border p-5 ">Intelligence<input  type ="number"></div>
+                        <div class="row border p-5 ">Wisdom<input  type ="number"></div>
+                        <div class="row border p-5 ">Charisma<input  type ="number"></div>
+                        <div class="row border p-5"> Passive Widsom<input type="number"></div>
+                        <div class="row">
+                            <textarea>Other Proficiencies</textarea>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 border"> Main Col2
+                <div class="row">
+                    <div class="col border">
+                        <div class="row border p-3">Inspiration<select></select></div>
+                        <div class="row border p-3">Proficiency bonus<select></select></div>
+                        <div class="row border p-1">
+                            <div>Saving Throws</div><!--Highlight the chosen bonus throws-->
+                            <br>
+                            <br>
+                            <p>Strength</p>
+                            <p>Dexterity</p>
+                            <p>Constitution</p>
+                            <p>Intelligence</p>
+                            <p>Wisdom</p>
+                            <p>Cahrisma</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col border">Skills
+                        <p> Acrobatics</p>
+                        <p> Animal Handling</p>
+                        <p> Arcana</p>
+                        <p> Athletics</p>
+                        <p> Deception</p>
+                        <p> History</p>
+                        <p> Insight</p>
+                        <p> Intimidation</p>
+                        <p> Investigation</p>
+                        <p> Medicine</p>
+                        <p> Nature</p>
+                        <p> Perception</p>
+                        <p> Performance</p>
+                        <p> Persuasion</p>
+                        <p> Religion</p>
+                        <p> Sleight of Hand</p>
+                        <p> Stealth</p>
+                        <p> Survival</p>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 border">
+                <div class="row">
+                    <div class="col-lg-4 border">Armor class</div>
+                    <div class="col-lg-4 border">Initiative</div>
+                    <div class="col-lg-4 border">Speed</div>
+
+                </div>
+
+                <div class="row border p-5">
+                    <div class="col">Current Hit Points</div>
+                    <textarea></textarea>
+                </div>
+
+                <div class="row border p-5">
+                    <div class="col">Temporary Hit Points</div>
+                    <textarea></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="col border"> Hit Dice
+                        <p>
+
+                        </p>
+                    </div>
+
+                    <div class="col border"> Death Saves
+                        <div class="row">successes</div>
+                        <div class="row">failures</div>
+                    </div>
+
+                    <div class="row p-5">
+                        <div class="col">Attacks and Spellcasting  Adjust area</div>
+                        <textarea></textarea>
+                    </div>
+
+                    <div class="row p-5">
+                        <div class="col">Equipment</div>
+                        <textarea></textarea>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="col-lg-4 border "> Char B/G
+                <div class="col p-5">
+                    <div class="row  p-6"> Personality Traits: <textarea>Select or Roll for 2 personality traits</textarea></div>
+                    <div class="row  p-6"> Ideals: <textarea>Select or roll for 1 ideal</textarea></div>
+                    <div class="row  p-6"> Bonds: <textarea>Select or roll for 1 Bond</textarea></div>
+                    <div class="row  p-6"> Flaws: <textarea>Select or roll for 1 Flaw</textarea></div>
+                </div>
+
+                <div class="row p-5">
+                    <div class="col">Features and Traits</div>
+                    <textarea>
+                        Afforded by Race:
+
+                        Afforded by Class:
+
+                        Other:
+                    </textarea>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    </div>
+    </div>
+
+
+</form>
 </body>
 </html>
