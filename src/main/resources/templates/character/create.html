@@ -2,7 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body class="container bg-dark text-light">
-<form class="text-center d-flex justify-content-center">
+<form class="text-center d-flex justify-content-center" method="post">
+    <div>
+
     <div class>
         <div class="row border">
 
@@ -228,8 +230,11 @@
                     <div class="col">Features and Traits</div>
                     <textarea>
                         Afforded by Race:
-
+                    </textarea>
+                    <textarea>
                         Afforded by Class:
+                    </textarea>
+                    <textarea>
 
                         Other:
                     </textarea>
@@ -238,10 +243,16 @@
 
             </div>
 
+            <div class="row"><br></div>
+            <div class="row"><br></div>
+            <div class="col-lg-2 offset-5">            <input class="btn btn-success " type="submit" value="Create Character">
+            </div>
 
 
 
-        </div>
+
+
+            </div>
 
 
 
@@ -250,11 +261,12 @@
     </div>
     </div>
 
+    </div>
+
+    </div>
 </form>
 
-<div>
-    <input class="btn btn-success text-center" type="submit" value="Create Character">
-</div>
+
 
 </body>
 </html>

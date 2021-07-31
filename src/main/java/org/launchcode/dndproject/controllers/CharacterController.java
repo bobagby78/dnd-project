@@ -5,9 +5,10 @@ import org.launchcode.dndproject.models.data.BaseCharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("character")
@@ -31,7 +32,14 @@ public class CharacterController {
     }
 
     @PostMapping("create")
-    public String processCreateCharacterForm(){
+    public String processCreateCharacterForm(@ModelAttribute @Valid BaseCharacter newBaseCharacter,
+                                             Errors errors){
+        if(errors.hasErrors()){
+            return "character/create";
+        }
+
+        baseCharacterRepository.save(newBaseCharacter);
+
         return "redirect:";
     }
 
