@@ -76,6 +76,7 @@
                             <label> Alignment
                                 <select id="alignment" name="alignment" th:field="${baseCharacter.alignment}" class="form-control">
                                     <option value=""> Choose your Alignment </option>
+                                    <option value="lawfulGood"> Lawful Good </option>
                                     <option value="neutralGood"> Neutral Good </option>
                                     <option value="chaoticGood"> Chaotic Good </option>
                                     <option value="lawfulNeutral"> Lawful Neutral </option>
@@ -105,7 +106,13 @@
         <div class="row"><div class="col"><br></div></div>
 
         <div class="row ">
-            <div class="col-lg-2 border "> Main Col1 Dice Roller
+            <!--TODO: make this prettier-->
+            <div class="col-lg-2 border ">
+                <div class="row">
+                    Set Ability Point Scores
+                    <!--TODO: add dice ability roll functionality-->
+                    <button id="abilityRoll">Roll for AP</button>
+                </div>
                 <div class="row">
                     <div class="col border">
                         <div class="row border p-5 " >Click to set Strength
