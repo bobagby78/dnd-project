@@ -1,14 +1,12 @@
 package org.launchcode.dndproject.models;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
 
 @Entity
-public class BaseCharacter extends AbstractEntity{
+public class CharacterIdentity extends AbstractEntity{
 
 
 
@@ -19,9 +17,9 @@ public class BaseCharacter extends AbstractEntity{
     private String alignment;
     private String xp;
 
-    public BaseCharacter() {}
+    public CharacterIdentity() {}
 
-    public BaseCharacter(Integer id, String charName, String charClass, String background, String charRace, String alignment, String xp) {
+    public CharacterIdentity(Integer id, String charName, String charClass, String background, String charRace, String alignment, String xp) {
 
         this.charClass = charClass;
         this.background = background;
@@ -75,7 +73,7 @@ public class BaseCharacter extends AbstractEntity{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BaseCharacter that = (BaseCharacter) o;
+        CharacterIdentity that = (CharacterIdentity) o;
         return Objects.equals(charClass, that.charClass) && Objects.equals(background, that.background) && Objects.equals(charRace, that.charRace) && Objects.equals(alignment, that.alignment) && Objects.equals(xp, that.xp);
     }
 

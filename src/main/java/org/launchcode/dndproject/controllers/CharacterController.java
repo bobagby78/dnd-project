@@ -1,7 +1,7 @@
 package org.launchcode.dndproject.controllers;
 
-import org.launchcode.dndproject.models.BaseCharacter;
-import org.launchcode.dndproject.models.data.BaseCharacterRepository;
+import org.launchcode.dndproject.models.CharacterIdentity;
+import org.launchcode.dndproject.models.data.CharacterIdentityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +15,7 @@ import javax.validation.Valid;
 public class CharacterController {
 
     @Autowired
-    private BaseCharacterRepository baseCharacterRepository;
+    private CharacterIdentityRepository characterIdentityRepository;
 
     @GetMapping
     public String characterIndex(){
@@ -25,20 +25,20 @@ public class CharacterController {
     @GetMapping("create")
     public String renderCreateCharacterForm(Model model){
         model.addAttribute("title", "Create Character");
-        model.addAttribute(new BaseCharacter());
+        model.addAttribute(new CharacterIdentity());
         model.addAttribute("");
 
         return "character/create";
     }
 
     @PostMapping("create")
-    public String processCreateCharacterForm(@ModelAttribute @Valid BaseCharacter newBaseCharacter,
+    public String processCreateCharacterForm(@ModelAttribute @Valid CharacterIdentity newCharacterIdentity,
                                              Errors errors){
         if(errors.hasErrors()){
             return "character/create";
         }
 
-        baseCharacterRepository.save(newBaseCharacter);
+        characterIdentityRepository.save(newCharacterIdentity);
 
         return "redirect:";
     }
