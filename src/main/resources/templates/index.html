@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container text-light bg-dark homeBG">
-<div class="bg-image"
-    style="background-image: url(/images/dnd-map.jpg);
-    height: 100vh">
+<body class="container text-light bg-dark"
+
+      style="background-image: url('/images/dnd-map.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;">
+<div >
     <header th:replace="fragments :: header"></header>
 
     <div>
@@ -54,8 +57,13 @@
 
     </div>
 
-</div>
 
+
+</div>
+        <style>
+
+
+        </style>
 
 </body>
 </html>
