@@ -27,6 +27,8 @@ public class User extends AbstractEntity{
         this.userEmail = userEmail;
     }
 
+
+
     public String getUsername() {
         return username;
     }
