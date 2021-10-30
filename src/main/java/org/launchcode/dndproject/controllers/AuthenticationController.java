@@ -2,6 +2,7 @@ package org.launchcode.dndproject.controllers;
 
 import org.launchcode.dndproject.models.User;
 import org.launchcode.dndproject.models.data.UserRepository;
+import org.launchcode.dndproject.models.dto.LoginFormDTO;
 import org.launchcode.dndproject.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,10 +44,43 @@ public class AuthenticationController {
         session.setAttribute(userSessionKey, user.getId());
     }
 
-    @GetMapping("auth")
-    public String renderAuthForm(Model model){
+    @GetMapping("userLogin")
+    public String renderUserLoginForm(Model model){
+        model.addAttribute(new LoginFormDTO());
         model.addAttribute("title", "Log in");
-        return "/auth";
+        return "/userLogin";
+    }
+
+    @PostMapping("userLogin")
+    public String processUserLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
+                                       Errors errors, HttpServletRequest request,
+                                       Model model){
+
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "User Login");
+            return "userLogin";
+        }
+
+        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+
+        if (theUser == null){
+            errors.rejectValue("username", "user.invalid", "The username or password is incorrect");
+            model.addAttribute("title", "User Login");
+
+            return "userLogin";
+        }
+
+        String password = loginFormDTO.getPassword();
+
+        if (!theUser.isMatchingPassword(password)) {
+            errors.rejectValue("password", "password.invalid", "The username or password is incorrect");
+            model.addAttribute("title", "User Login");
+            return "userLogin";
+        }
+
+        setUserInSession(request.getSession(), theUser);
+
+        return "redirect:";
     }
 
     @GetMapping("register")
@@ -62,13 +96,13 @@ public class AuthenticationController {
                                           Model model){
         if (errors.hasErrors()) {
             model.addAttribute("title", "Register");
-            return" register";
+            return "register";
         }
 
         User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
 
         if (existingUser != null){
-            errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
+            errors.rejectValue("username", "username.alreadyExists", "A user with that username already exists");
             model.addAttribute("title", "Register");
             return "register";
         }

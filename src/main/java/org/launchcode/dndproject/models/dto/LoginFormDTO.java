@@ -11,9 +11,9 @@ public class LoginFormDTO {
     @Size(min = 3, max=30, message= "Username must be between 3 and 30 characters")
     private String username;
 
-    @NotNull
-    @NotBlank
-    @Size(min = 3, max=30, message= "Username must be between 3 and 30 characters")
+//    @NotNull
+//    @NotBlank
+//    @Size(min = 3, max=30, message= "Username must be between 3 and 30 characters")
     private String userEmail;
 
     @NotNull

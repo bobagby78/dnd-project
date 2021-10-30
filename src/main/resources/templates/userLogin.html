@@ -12,15 +12,16 @@
 <body class="container">
 <h1>Welcome To The Dungeon</h1>
 <h2>Please log in</h2>
-<form>
+<form method="post">
     <p>Username</p>
-    <input type="text">
+    <input type="text" th:field="${loginFormDTO.username}">
+    <p class="error" th:errors="${loginFormDTO.username}"></p>
     <p>Password</p>
-    <input type="password">
-    <p><br><input type="submit" value="enter"></p>
+    <input type="password" th:field="${loginFormDTO.password}">
+    <p><br><input type="submit" value="Log in"></p>
 </form>
 
 <h3>Don't have an account?</h3>
-<a href="/register.html"><p>Link to Register</p> </a>
+<a href="/register"><p>Link to Register</p> </a>
 </body>
 </html>
