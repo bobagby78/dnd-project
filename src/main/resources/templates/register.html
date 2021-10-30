@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace= "fragments :: head">
+
+</head>
+<body class="container">
+<h1>Welcome To The Dungeon</h1>
+<h2>Please fill out all fields to register</h2>
+<form method="post">
+
+<!--    TODO: Experiment with tables for the formatting-->
+
+    <p>Email <input type="text" th:field="${registerFormDTO.userEmail}" autofocus> </p>
+
+
+    <p>Username <input type="text" th:field="${registerFormDTO.username}"> </p>
+
+
+    <p>Password <input type="password" th:field="${registerFormDTO.password}"> </p>
+
+
+    <p>Verify Password<input type="password" th:field="${registerFormDTO.verifyPassword}"> </p>
+
+    <p><br><input type="submit" value="Register Now"> </p>
+
+</form>
+</body>
+</html>
