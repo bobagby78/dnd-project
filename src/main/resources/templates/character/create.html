@@ -11,7 +11,7 @@
             <div class="col-lg-3">
                 <div class="form-group" value = "Character Name">
                     <label> Character Name
-                        <input type="text" id="name"  name="name" th:field="${characterIdentity.name}" class="form-control">
+                        <input type="text" id="name"  name="name" th:field="${dndCharacter.name}" class="form-control">
                     </label>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class = "col-lg-4">
                             <label> Class
-                                <select id="charClass" name="charClass" th:field="${characterIdentity.charClass}" class="form-control">
+                                <select id="charClass" name="charClass" th:field="${dndCharacter.charClass}" class="form-control">
                                     <option value=""> Choose your Class </option>
                                     <option value="barbarian"> Barbarian </option>
                                     <option value="bard"> Bard </option>
@@ -43,7 +43,7 @@
 
                         <div class = "col-lg-4">
                             <label> Background
-                                <input type="text" id="background" name="background" th:field="${characterIdentity.background}" class="form-control">
+                                <input type="text" id="background" name="background" th:field="${dndCharacter.background}" class="form-control">
                             </label>
                         </div>
 
@@ -58,7 +58,7 @@
 
                         <div class="col-lg-4">
                             <label> Race
-                                <select id="charRace" name="charRace" th:field="${characterIdentity.charRace}" class="form-control">
+                                <select id="charRace" name="charRace" th:field="${dndCharacter.charRace}" class="form-control">
                                     <option value=""> Choose your Race </option>
                                     <option value="dwarf"> Dwarf </option>
                                     <option value="elf"> Elf </option>
@@ -74,7 +74,7 @@
 
                         <div class="col-lg-4">
                             <label> Alignment
-                                <select id="alignment" name="alignment" th:field="${characterIdentity.alignment}" class="form-control">
+                                <select id="alignment" name="alignment" th:field="${dndCharacter.alignment}" class="form-control">
                                     <option value=""> Choose your Alignment </option>
                                     <option value="lawfulGood"> Lawful Good </option>
                                     <option value="neutralGood"> Neutral Good </option>
@@ -92,7 +92,7 @@
 
                         <div class="col-lg-4">
                             <label> Exp <!-- starts at zero and builds automatically through BaseCharacter method -->
-                                <input type="text" name="xp" id="xp" th:field="${characterIdentity.xp}" value="0" class="form-control">
+                                <input type="text" name="xp" id="xp" th:field="${dndCharacter.xp}" value="0" class="form-control">
                             </label>
                         </div>
                     </div>

@@ -6,8 +6,8 @@ import java.util.Objects;
 
 
 @Entity
-public class CharacterIdentity extends AbstractEntity{
-
+public class DndCharacter extends AbstractEntity{
+    //from abstractEntity it's getting id and name fields
 
 
     @Size(min=3 , max= 250, message = "Please enter a character name between 3 and 250 characters" )
@@ -17,9 +17,9 @@ public class CharacterIdentity extends AbstractEntity{
     private String alignment;
     private String xp;
 
-    public CharacterIdentity() {}
+    public DndCharacter() {}
 
-    public CharacterIdentity(Integer id, String charName, String charClass, String background, String charRace, String alignment, String xp) {
+    public DndCharacter(Integer id, String charName, String charClass, String background, String charRace, String alignment, String xp) {
 
         this.charClass = charClass;
         this.background = background;
@@ -73,7 +73,7 @@ public class CharacterIdentity extends AbstractEntity{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CharacterIdentity that = (CharacterIdentity) o;
+        DndCharacter that = (DndCharacter) o;
         return Objects.equals(charClass, that.charClass) && Objects.equals(background, that.background) && Objects.equals(charRace, that.charRace) && Objects.equals(alignment, that.alignment) && Objects.equals(xp, that.xp);
     }
 
