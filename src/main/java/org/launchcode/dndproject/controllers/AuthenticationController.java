@@ -116,7 +116,7 @@ public class AuthenticationController {
 
         }
 
-        User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getPassword(), registerFormDTO.getUserEmail());
+        User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getPassword(), registerFormDTO.getUserEmail(), registerFormDTO.getRoles());
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
 

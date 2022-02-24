@@ -2,6 +2,7 @@ package org.launchcode.dndproject.models;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -16,18 +17,82 @@ public class DndCharacter extends AbstractEntity{
     private String charRace;
     private String alignment;
     private String xp;
+    private Integer strength;
+    private Integer dexterity;
+    private Integer constitution;
+    private Integer intelligence;
+    private Integer wisdom;
+    private Integer charisma;
 
-    public DndCharacter() {}
+    public DndCharacter() {
+    }
+//TODO: learn how to write a function in Java and then finish this.
+//    public ArrayList<Integer> rollAbilityScores(){
+//        ArrayList<Integer> d6Rolls = null;
+//        return d6Rolls;
+//    }
 
-    public DndCharacter(Integer id, String charName, String charClass, String background, String charRace, String alignment, String xp) {
+    public Integer getStrength() {
+        return strength;
+    }
 
+    public void setStrength(Integer strength) {
+        this.strength = strength;
+    }
+
+    public Integer getDexterity() {
+        return dexterity;
+    }
+
+    public void setDexterity(Integer dexterity) {
+        this.dexterity = dexterity;
+    }
+
+    public Integer getConstitution() {
+        return constitution;
+    }
+
+    public void setConstitution(Integer constitution) {
+        this.constitution = constitution;
+    }
+
+    public Integer getIntelligence() {
+        return intelligence;
+    }
+
+    public void setIntelligence(Integer intelligence) {
+        this.intelligence = intelligence;
+    }
+
+    public Integer getWisdom() {
+        return wisdom;
+    }
+
+    public void setWisdom(Integer wisdom) {
+        this.wisdom = wisdom;
+    }
+
+    public Integer getCharisma() {
+        return charisma;
+    }
+
+    public void setCharisma(Integer charisma) {
+        this.charisma = charisma;
+    }
+
+    public DndCharacter(String charClass, String background, String charRace, String alignment, String xp, Integer strength, Integer dexterity, Integer constitution, Integer intelligence, Integer wisdom, Integer charisma) {
         this.charClass = charClass;
         this.background = background;
         this.charRace = charRace;
         this.alignment = alignment;
         this.xp = xp;
+        this.strength = strength;
+        this.dexterity = dexterity;
+        this.constitution = constitution;
+        this.intelligence = intelligence;
+        this.wisdom = wisdom;
+        this.charisma = charisma;
     }
-
 
     public String getCharClass() {
         return charClass;

@@ -9,6 +9,8 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Optional;
 
 @Controller
@@ -25,9 +27,13 @@ public class CharacterController {
 
     @GetMapping("create")
     public String renderCreateCharacterForm(Model model){
+        ArrayList<String> characterClasses = new ArrayList<String>(Arrays.asList("barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"));
+        model.addAttribute(characterClasses);
         model.addAttribute("title", "Create Character");
         model.addAttribute(new DndCharacter());
         model.addAttribute("");
+
+        System.out.println(characterClasses);
 
         return "character/create";
     }

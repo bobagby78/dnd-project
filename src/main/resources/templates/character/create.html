@@ -5,13 +5,13 @@
 <form class="text-center d-flex justify-content-center" method="post">
     <div>
 
-    <div class>
+    <div>
         <div class="row border">
 
             <div class="col-lg-3">
                 <div class="form-group" value = "Character Name">
                     <label> Character Name
-                        <input type="text" id="name"  name="name" th:field="${dndCharacter.name}" class="form-control">
+                        <input type="text" id="name"  name="name" th:field="${dndCharacter.name}"  class="form-control">
                     </label>
                 </div>
             </div>
@@ -22,6 +22,7 @@
                         <div class = "col-lg-4">
                             <label> Class
                                 <select id="charClass" name="charClass" th:field="${dndCharacter.charClass}" class="form-control">
+
                                     <option value=""> Choose your Class </option>
                                     <option value="barbarian"> Barbarian </option>
                                     <option value="bard"> Bard </option>
@@ -35,6 +36,14 @@
                                     <option value="sorcerer"> Sorcerer </option>
                                     <option value="warlock"> Warlock </option>
                                     <option value="wizard"> Wizard </option>
+
+<!--TODO: figure out the th:each iteration below to avoid the monster above
+        then implement it for the rest of the monsters on this file-->
+
+<!--                                        <option th:each="class : ${characterClasses}" th:value="${class}" th:text="${class}">Test</option>-->
+<!--                                    <th:block th:each="class : ${characterClasses}">-->
+<!--                                        <option th:value="${class}" th:text="${class}">Test</option>-->
+<!--                                    </th:block>-->
                                 </select>
                             </label>
 
@@ -91,8 +100,8 @@
 
 
                         <div class="col-lg-4">
-                            <label> Exp <!-- starts at zero and builds automatically through BaseCharacter method -->
-                                <input type="text" name="xp" id="xp" th:field="${dndCharacter.xp}" value="0" class="form-control">
+                            <label> Exp
+                                <input type="number" name="xp" id="xp" th:field="${dndCharacter.xp}" placeholder="0" class="form-control">
                             </label>
                         </div>
                     </div>
@@ -111,18 +120,17 @@
                 <div class="row">
                     Set Ability Point Scores
                     <!--TODO: add dice ability roll functionality-->
-                    <button id="abilityRoll">Roll for Ability Scores</button>
+                    <button id="abilityRoll" onclick="runAbilScores()">Roll for Ability Scores</button>
                 </div>
                 <div class="row">
                     <div class="col border">
-                        <div class="row border p-5 " >Click to set Strength
-                            <input  type ="number"></div>
-                        <div class="row border p-5 ">Dexterity<input  type ="number"></div>
-                        <div class="row border p-5 ">Constitution<input  type ="number"></div>
-                        <div class="row border p-5 ">Intelligence<input  type ="number"></div>
-                        <div class="row border p-5 ">Wisdom<input  type ="number"></div>
-                        <div class="row border p-5 ">Charisma<input  type ="number"></div>
-                        <div class="row border p-5"> Passive Widsom<input type="number"></div>
+                        <div class="row border p-5 " >Strength<input th:field="${dndCharacter.strength}" type ="number"></div>
+                        <div class="row border p-5 " >Dexterity<input th:field="${dndCharacter.dexterity}" type ="number"></div>
+                        <div class="row border p-5 " >Constitution<input th:field="${dndCharacter.constitution}" type ="number"></div>
+                        <div class="row border p-5 " >Intelligence<input th:field="${dndCharacter.intelligence}" type ="number"></div>
+                        <div class="row border p-5 " >Wisdom<input th:field="${dndCharacter.wisdom}" type ="number"></div>
+                        <div class="row border p-5 " >Charisma<input th:field="${dndCharacter.charisma}" type ="number"></div>
+<!--                        <div class="row border p-5"> Passive Widsom<input type="number"></div>-->
                         <div class="row">
                             <textarea>Other Proficiencies</textarea>
                         </div>
@@ -255,14 +263,7 @@
             <div class="col-lg-2 offset-5">
                 <input class="btn btn-success " type="submit" value="Create Character">
             </div>
-
-
-
-
-
             </div>
-
-
 
     </div>
 
@@ -274,7 +275,7 @@
     </div>
 </form>
 
-
+<script src="/js-files/abilityScoresRoll.js"></script>
 
 </body>
 </html>
