@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        return new BCryptPasswordEncoder(10); this is what we would really use
 
     }
-//TODO: add authorities back where needed
+//TODO: add authorities back where needed once everything works right
     protected void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
 //                .antMatchers("/character/**").permitAll()

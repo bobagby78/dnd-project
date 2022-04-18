@@ -11,8 +11,34 @@
 <p><a href="/character/create"> Create a new character</a></p>
 
 <div class="row text-center">
-    Hey
+
     <h2 th:text="${dndCharacter.name}">Character Name</h2><!--this is the problem line here-->
+
+    <table>
+
+        <tr>
+            <td colspan="6" th:text="${dndCharacter.charClass}">Character Class</td>
+            <td colspan="6" th:text="${dndCharacter.background}">Character Background</td>
+            <td colspan="6">Player Name To Come</td>
+        </tr>
+
+        <tr>
+            <td colspan="6" th:text="${dndCharacter.charRace}">Character Race</td>
+            <td colspan="6" th:text="${dndCharacter.alignment}">Character Alignment</td>
+            <td colspan="6" th:text="${dndCharacter.xp}">XP</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">Ability Scores</td>  <td colspan="3">Abilities</td> <td colspan="3">Armor Class</td> <td colspan="3">Initiative</td> <td colspan="3">Character Background</td>
+        </tr>
+
+        <tr>
+            <td th:text="'Strength: ' + ${dndCharacter.strength}">Strength</td>
+        </tr>
+
+
+    </table>
+
 </div>
 
 </body>

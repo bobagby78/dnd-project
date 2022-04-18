@@ -21,8 +21,10 @@ let abilScores = ()=>{
 }
 
 let runAbilScores =()=>{
-    let newWindow = window.open("","" ,  'width = 300, height = 125 toolbar = 0');
-    newWindow.document.write("<h2> Your ability scores are, </h2>" + abilScores());
+
+//    let newWindow = window.open("","" ,  'width = 300, height = 125 toolbar = 0');
+//    newWindow.document.write("<h2> Your ability scores are, </h2>" + abilScores());
+    document.getElementById("ability-results").innerHTML = "<h5> Your ability scores: </h5>" + abilScores();
     event.preventDefault();
 }
 //

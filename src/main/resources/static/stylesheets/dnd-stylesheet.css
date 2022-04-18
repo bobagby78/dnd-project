@@ -1,7 +1,32 @@
       homeBG {
         background-image: url("/images/dnd-map.jpg");
         height: 100vh;
-        color: li
+
+      }
+
+      a{
+        background-color: darkslategray;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+
+      }
+
+      a :hover{
+        color: gray;
+      }
+
+      .side-nav{
+        background-color: darkslategray;
+        max-width: 200px;
+        opacity: 60%;
+
+      }
+
+      .border-div{
+        border: white 2px solid;
+        margin: 0;
+        padding: 0;
       }
 
 

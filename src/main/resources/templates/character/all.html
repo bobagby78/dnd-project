@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+
+<body class="container bg-dark text-light p-5">
+<p>All Characters will go here by character name</p>
+<p>Clicking on a character will link to /view/{id number}</p>
+<table>
+    <tr th:each="character: ${allCharacters}">
+        <td th:text="${character.name}"></td>  <td><a th:href="'/character/view/'+${character.id}">View Character</a></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

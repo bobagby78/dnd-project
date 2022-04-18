@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
+<link rel="stylesheet" href="/stylesheets/dnd-stylesheet.css">
 <body class="container text-light bg-dark"
 
       style="background-image: url('/images/dnd-map.jpg');
@@ -16,31 +17,37 @@
             <div class="col-md-3 text-center">
                 <div class='p-3'><h2>Venture Forth</h2></div>
                 <div class="row"></div>
-                <div class="col">
+                <div class="col side-nav">
 
                     <div class="row">
-                        <div>
+                        <div class="border-div">
                             <div class='p-3 '><a href="/">Dungeon Main Page</a></div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div>
+                        <div class="border-div">
                             <div class='p-3 '><a href="/character">View Characters</a></div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div>
+                        <div class="border-div">
                             <div class='p-3 '><a href="/character/create">Character Builder</a></div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div>
-                            <div class='p-3 '> </div>
+                        <div class="border-div">
+                            <div class='p-3 '><a href="/meetup">Meetup</a></div>
                         </div>
                     </div>
+
+<!--                    <div class="row">-->
+<!--                        <div class="border-div">-->
+<!--                            <div class='p-3 '> </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                 </div>
             </div>

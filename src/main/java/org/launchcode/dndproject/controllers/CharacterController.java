@@ -62,4 +62,11 @@ public class CharacterController {
 
         return "character/view";
     }
+
+    @GetMapping("all")
+    public String displayAllCharacters(Model model){
+        model.addAttribute("title", "All Characters");
+        model.addAttribute("allCharacters", dndCharacterRepository.findAll());
+        return "/character/all.html";
+    }
 }
